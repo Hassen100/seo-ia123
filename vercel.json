@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "name": "magasin-jeux-static",
+  "buildCommand": "echo 'No build needed - static files'",
+  "outputDirectory": "./",
+  "installCommand": "echo 'No install needed'",
+  "builds": [
+    {
+      "src": "**/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}
