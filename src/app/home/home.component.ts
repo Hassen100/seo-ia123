@@ -5,6 +5,7 @@ export interface Game {
   name: string;
   price: number;
   image: string;
+  officialLink: string;
 }
 
 @Component({
@@ -16,15 +17,17 @@ export class HomeComponent {
   games: Game[] = [
     {
       id: 1,
-      name: 'FIFA 24',
+      name: 'FC 24',
       price: 59,
-      image: 'fifa24'
+      image: 'fifa24',
+      officialLink: 'https://www.ea.com/games/ea-sports-fc/fc-24/media'
     },
     {
       id: 2,
       name: 'Call of Duty',
       price: 69,
-      image: 'callduty'
+      image: 'callduty',
+      officialLink: 'https://www.callofduty.com/media'
     }
   ];
 
@@ -34,7 +37,8 @@ export class HomeComponent {
   }
 
   voirDetails(game: Game) {
-    alert(`👁️ Détails du jeu "${game.name}"\n\n• Graphismes HD\n• Multijoueur en ligne\n• Mises à jour gratuites\n• Compatible PC/Console\n\nPrix: ${game.price}€`);
-    console.log(`Voir détails du jeu: ${game.name} - ${game.price}€`);
+    // Rediriger vers le site officiel du jeu
+    window.open(game.officialLink, '_blank');
+    console.log(`Redirection vers les détails officiels de: ${game.name}`);
   }
 }

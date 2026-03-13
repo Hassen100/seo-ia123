@@ -214,20 +214,20 @@
 
     <main class="main-content">
       <div class="games-grid">
-        <!-- Game 1: FIFA 24 -->
+        <!-- Game 1: FC 24 -->
         <div class="game-card">
           <div class="game-image">
             <div class="game-icon">⚽</div>
           </div>
           <div class="game-info">
-            <h3 class="game-title">FIFA 24</h3>
+            <h3 class="game-title">FC 24</h3>
             <p class="game-price">59€</p>
             <div class="game-actions">
-              <button class="btn btn-primary" onclick="acheterJeu('FIFA 24', 59)">
+              <button class="btn btn-primary" onclick="acheterJeu('FC 24', 59)">
                 🛒 Acheter
               </button>
-              <button class="btn btn-secondary" onclick="voirDetails('FIFA 24', 59)">
-                👁️ Voir détails
+              <button class="btn btn-secondary" onclick="voirDetails('FC 24', 59, 'https://www.ea.com/games/ea-sports-fc/fc-24/media')">
+                � Voir détails
               </button>
             </div>
           </div>
@@ -245,8 +245,8 @@
               <button class="btn btn-primary" onclick="acheterJeu('Call of Duty', 69)">
                 🛒 Acheter
               </button>
-              <button class="btn btn-secondary" onclick="voirDetails('Call of Duty', 69)">
-                👁️ Voir détails
+              <button class="btn btn-secondary" onclick="voirDetails('Call of Duty', 69, 'https://www.callofduty.com/media')">
+                � Voir détails
               </button>
             </div>
           </div>
@@ -260,17 +260,19 @@
     const games = [
       {
         id: 1,
-        name: 'FIFA 24',
+        name: 'FC 24',
         price: 59,
         image: 'fifa24',
-        icon: '⚽'
+        icon: '⚽',
+        officialLink: 'https://www.ea.com/games/ea-sports-fc/fc-24/media'
       },
       {
         id: 2,
         name: 'Call of Duty',
         price: 69,
         image: 'callduty',
-        icon: '🎯'
+        icon: '🎯',
+        officialLink: 'https://www.callofduty.com/media'
       }
     ];
 
@@ -280,9 +282,10 @@
       console.log(`Achat du jeu: ${nomJeu} - ${prix}€`);
     }
 
-    function voirDetails(nomJeu, prix) {
-      alert(`👁️ Détails du jeu "${nomJeu}"\n\n• Graphismes HD\n• Multijoueur en ligne\n• Mises à jour gratuites\n• Compatible PC/Console\n\nPrix: ${prix}€`);
-      console.log(`Voir détails du jeu: ${nomJeu} - ${prix}€`);
+    function voirDetails(nomJeu, prix, officialLink) {
+      // Rediriger vers le site officiel du jeu
+      window.open(officialLink, '_blank');
+      console.log(`Redirection vers les détails officiels de: ${nomJeu}`);
     }
 
     // Simulating *ngFor rendering (already done in HTML for simplicity)
