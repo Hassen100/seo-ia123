@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magasin de Jeux</title>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 2rem;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .title {
+      font-size: 3rem;
+      font-weight: 800;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      margin: 0;
+    }
+
+    .main-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 2rem;
+      padding: 0 1rem;
+    }
+
+    .game-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .game-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .game-image {
+      height: 250px;
+      background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .game-icon {
+      font-size: 5rem;
+      color: #667eea;
+    }
+
+    .game-info {
+      padding: 2rem;
+    }
+
+    .game-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .game-price {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #4CAF50;
+      margin-bottom: 2rem;
+    }
+
+    .game-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 1rem 1.5rem;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      flex: 1;
+      min-width: 140px;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #4CAF50, #45a049);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #45a049, #3d8b40);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+    }
+
+    .btn-secondary {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: linear-gradient(135deg, #5a6fd8, #6a4190);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      .title {
+        font-size: 2.5rem;
+      }
+      
+      .games-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0;
+      }
+      
+      .game-image {
+        height: 200px;
+      }
+      
+      .game-actions {
+        flex-direction: column;
+      }
+      
+      .btn {
+        min-width: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .title {
+        font-size: 2rem;
+      }
+      
+      .game-info {
+        padding: 1.5rem;
+      }
+      
+      .game-title {
+        font-size: 1.5rem;
+      }
+      
+      .game-price {
+        font-size: 1.8rem;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .game-card {
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    .game-card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="title">🎮 Magasin de Jeux</h1>
+    </header>
+
+    <main class="main-content">
+      <div class="games-grid">
+        <!-- Game 1: FIFA 24 -->
+        <div class="game-card">
+          <div class="game-image">
+            <div class="game-icon">⚽</div>
+          </div>
+          <div class="game-info">
+            <h3 class="game-title">FIFA 24</h3>
+            <p class="game-price">59€</p>
+            <div class="game-actions">
+              <button class="btn btn-primary" onclick="acheterJeu('FIFA 24', 59)">
+                🛒 Acheter
+              </button>
+              <button class="btn btn-secondary" onclick="voirDetails('FIFA 24', 59)">
+                👁️ Voir détails
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Game 2: Call of Duty -->
+        <div class="game-card">
+          <div class="game-image">
+            <div class="game-icon">🎯</div>
+          </div>
+          <div class="game-info">
+            <h3 class="game-title">Call of Duty</h3>
+            <p class="game-price">69€</p>
+            <div class="game-actions">
+              <button class="btn btn-primary" onclick="acheterJeu('Call of Duty', 69)">
+                🛒 Acheter
+              </button>
+              <button class="btn btn-secondary" onclick="voirDetails('Call of Duty', 69)">
+                👁️ Voir détails
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Simulating Angular *ngFor with JavaScript
+    const games = [
+      {
+        id: 1,
+        name: 'FIFA 24',
+        price: 59,
+        image: 'fifa24',
+        icon: '⚽'
+      },
+      {
+        id: 2,
+        name: 'Call of Duty',
+        price: 69,
+        image: 'callduty',
+        icon: '🎯'
+      }
+    ];
+
+    // Functions for game interactions
+    function acheterJeu(nomJeu, prix) {
+      alert(`🛒 Achat de "${nomJeu}" confirmé !\n\nPrix: ${prix}€\nRedirection vers la page de paiement...`);
+      console.log(`Achat du jeu: ${nomJeu} - ${prix}€`);
+    }
+
+    function voirDetails(nomJeu, prix) {
+      alert(`👁️ Détails du jeu "${nomJeu}"\n\n• Graphismes HD\n• Multijoueur en ligne\n• Mises à jour gratuites\n• Compatible PC/Console\n\nPrix: ${prix}€`);
+      console.log(`Voir détails du jeu: ${nomJeu} - ${prix}€`);
+    }
+
+    // Simulating *ngFor rendering (already done in HTML for simplicity)
+    console.log('Magasin de Jeux - Angular-like structure with HTML/CSS/JS');
+    console.log('Games loaded:', games);
+  </script>
+</body>
+</html>

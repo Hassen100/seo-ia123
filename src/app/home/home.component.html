@@ -1,0 +1,27 @@
+<div class="container">
+  <header class="header">
+    <h1 class="title">🎮 Magasin de Jeux</h1>
+  </header>
+
+  <main class="main-content">
+    <div class="games-grid">
+      <div class="game-card" *ngFor="let game of games">
+        <div class="game-image">
+          <div class="game-icon">{{ game.image === 'fifa24' ? '⚽' : '🎯' }}</div>
+        </div>
+        <div class="game-info">
+          <h3 class="game-title">{{ game.name }}</h3>
+          <p class="game-price">{{ game.price }}€</p>
+          <div class="game-actions">
+            <button class="btn btn-primary" (click)="acheterJeu(game)">
+              🛒 Acheter
+            </button>
+            <button class="btn btn-secondary" (click)="voirDetails(game)">
+              👁️ Voir détails
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
