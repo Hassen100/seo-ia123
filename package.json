@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:vercel": "ng build --configuration production --base-href \"/\" --output-path docs",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:game-store-dashboard": "node dist/game-store-dashboard/server/server.mjs"

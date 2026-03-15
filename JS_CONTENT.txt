@@ -1,0 +1,5 @@
+// Fichier JavaScript principal pour Game Store Dashboard
+// Copiez ce contenu et collez-le dans un nouveau fichier sur GitHub nommé: main-B6I3CKHY.js
+
+// Note: Ce fichier est minifié et contient toute l'application Angular
+// Il est nécessaire pour que votre site fonctionne

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { GamesService } from '../../services/games.service';
-import { AiRecommendationsService } from '../../services/ai-recommendations.service';
+import { GamesService } from './games.service';
+import { AiRecommendationsService } from './ai-recommendations.service';
 
 @Component({
   selector: 'app-recommendations',

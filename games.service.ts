@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { signal } from '@angular/core';
-import { Game } from '../models/game.interface';
+import { Game } from './game.interface';
 
 @Injectable({
   providedIn: 'root'

@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { GamesService } from '../../services/games.service';
-import { Game } from '../../models/game.interface';
+import { GamesService } from './games.service';
+import { Game } from './game.interface';
 
 @Component({
   selector: 'app-catalogue',

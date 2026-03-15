@@ -1,0 +1,45 @@
+/* Fichier CSS principal pour Game Store Dashboard */
+/* Copiez ce contenu et collez-le dans un nouveau fichier sur GitHub nommé: styles-2DHDKEKI.css */
+
+/* Styles de base */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background:linear-gradient(135deg,#1a1a2e,#16213e);color:#ecf0f1;line-height:1.6;overflow-x:hidden}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:#ffffff0d}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#667eea,#764ba2);border-radius:5px}
+::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#764ba2,#667eea)}
+
+/* Selection */
+::selection{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff}
+::-moz-selection{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff}
+
+/* Animations et transitions */
+a,button{transition:all .3s ease}
+button:focus,input:focus,select:focus,textarea:focus{outline:none}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+input,select,textarea{font-family:inherit;font-size:inherit;color:inherit}
+img{max-width:100%;height:auto}
+
+/* Typography */
+h1,h2,h3,h4,h5,h6{font-weight:700;line-height:1.2}
+
+/* Animation */
+@keyframes fadeIn{0%{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* App root */
+app-root{display:block;animation:fadeIn .5s ease-out}
+
+/* Layout */
+.container{max-width:1400px;margin:0 auto;padding:0 20px}
+.grid{display:grid;gap:20px}
+.flex{display:flex;align-items:center;justify-content:center}
+.text-center{text-align:center}
+.hidden{display:none!important}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+
+/* Responsive */
+@media(max-width:768px){html,body{font-size:14px}h1{font-size:1.8rem}h2{font-size:1.5rem}h3{font-size:1.2rem}}
+@media(max-width:480px){html,body{font-size:13px}h1{font-size:1.5rem}h2{font-size:1.2rem}h3{font-size:1rem}}

@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { CatalogueComponent } from './components/catalogue/catalogue.component';
-import { GameDetailComponent } from './components/game-detail/game-detail.component';
-import { RecommendationsComponent } from './components/recommendations/recommendations.component';
+import { DashboardComponent } from './dashboard.component';
+import { CatalogueComponent } from './catalogue.component';
+import { GameDetailComponent } from './game-detail.component';
+import { RecommendationsComponent } from './recommendations.component';
 
 export const routes: Routes = [
   {
